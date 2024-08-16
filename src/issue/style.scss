@@ -1,0 +1,87 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.is-vertically-aligned-stretch .wp-block-signal-hill-murmurs {
+	flex: 1;
+	height: 100%;
+}
+
+.wp-block-signal-hill-murmurs {
+	padding: 2px;
+	display: flex;
+	flex-direction: column;
+}
+
+.murmurs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex: 1;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.murmurs-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #646970;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.murmurs-list li:hover, .murmurs-list li.selected {
+	opacity: 1;
+}
+
+.murmurs-list li h4 {
+	margin: 0;
+}
+
+.murmurs-list li:last-child {
+	border-bottom: none;
+}
+
+.murmurs-player {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 4px 0;
+	border-top: 1px solid #646970;
+	height: 3rem;
+}
+
+.murmurs-player button {
+	aspect-ratio: 1/1;
+	height: 2rem;
+	border: 1px solid #646970;
+	border-radius: 50%;
+	background: none;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #646970;
+	cursor: pointer;
+}
+
+.murmurs-player-now-playing {
+	display: flex;
+	flex: 1;
+	padding: 0 10px;
+}
+
+.murmurs-player-time {
+	opacity: 0.7;
+}
+
+button.murmurs-player-function {
+	aspect-ratio: none;
+	border: none;
+}
