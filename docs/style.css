@@ -2,39 +2,39 @@
 
 @font-face {
     font-family: 'Sligoil Micro';
-    src: url('/fonts/Sligoil-Micro.woff2') format('woff2'),
-         url('/fonts/Sligoil-Micro.woff') format('woff');
+    src: url('./fonts/Sligoil-Micro.woff2') format('woff2'),
+         url('./fonts/Sligoil-Micro.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Arizona Plus';
-    src: url('/fonts/ArizonaPlusVariable.woff2') format('woff2');
+    src: url('./fonts/ArizonaPlusVariable.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'ROM';
-    src: url('/fonts/ROMVariable.woff2') format('woff2');
+    src: url('./fonts/ROMVariable.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Avara';
-    src: url('/fonts/Avara-Bold.woff2') format('woff2');
+    src: url('./fonts/Avara-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avara';
-    src: url('/fonts/Avara-Black.woff2') format('woff2');
+    src: url('./fonts/Avara-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avara';
-    src: url('/fonts/Avara-BoldItalic.woff2') format('woff2');
+    src: url('./fonts/Avara-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
 }
