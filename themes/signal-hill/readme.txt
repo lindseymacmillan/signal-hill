@@ -1,67 +1,39 @@
-=== Signal Hill ===
-Contributors: 
-Tested up to: 6.4
-Requires at least: 6.4
-Requires PHP: 7.4
-Version: 100.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright: 
+=== signal-hill ===
 
-A full site editing theme. Basic version.
+Contributors: automattic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-== Guide ==
+Requires at least: 4.5
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
 
-=== Folder structure ===
+A starter theme called signal-hill.
 
-- Assets. Images and CSS files.
-- Parts. HTML template parts.
-- Patterns. Block patterns.
-- Templates. HTML block templates.
+== Description ==
 
-functions.php -Used to enqueue styles and add theme support.
-index.php     -"Silence is golden".
-style.css     -Required to activate the theme.
-theme.json    -Settings and default styles.
-license.txt   -GPL v2
-readme.txt    -Information about the theme.
-screenshot.png
+Description
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+signal-hill includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
-For changelogs please see the Github repository.
 
-1.0.0 Initial release
+= 1.0 - May 12 2015 =
+* Initial release
 
-== Licence ==
-Signal Hill is distributed under the terms of the GNU GPL.
+== Credits ==
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-== Resources used to build this theme ==
-
-* Twenty Twenty-Two WordPress theme (C) WordPress.org
-License: GNU General Public License v2.0 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-
-* Q WordPress theme (C) Ari Stathopoulos
-License: GNU General Public License v2.0 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-
-* Full site editing starter theme by Carolina Nymark
-https://fullsiteediting.com
-License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-
-Images
-Images from pxhere.com. Public domain:
-https://pxhere.com/en/photo/927190 -woman with curly hair
-https://pxhere.com/en/photo/1049910 -woman with t-shirt
-https://pxhere.com/en/photo/1604358 -woman with headphones
+* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
