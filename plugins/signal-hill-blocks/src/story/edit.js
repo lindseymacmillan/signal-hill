@@ -57,23 +57,22 @@ export default function Edit({
 		return select('core').getMedia(mediaArr);
 	}, [mediaArr]);
 
-	const audioPlaceholder = const mediaPlaceholder = <MediaPlaceholder
-	onSelect = {
-		( el ) => {
-			setAttributes( { theImage: el.url } );
+	const audioPlaceholder = <MediaPlaceholder
+		onSelect = {
+			( el ) => {
+				setAttributes( { theImage: el.url } );
+			}
 		}
-	}
-	allowedTypes = { [ 'image' ] }
-	multiple = { false }
-	labels = { { title: 'The Image' } }
->
-	"extra content"
-</MediaPlaceholder>;
+		allowedTypes = { [ 'image' ] }
+		multiple = { false }
+		labels = { { title: 'The Image' } }
+	>
+		"extra content"
+	</MediaPlaceholder>;
 
 	return (
 		<div { ...useBlockProps() }>
 			<div style={{display: 'flex', alignItems: 'center'}}>
-				<MediaPlaceholder
 				<MediaUploadCheck>
 					<MediaUpload
 						onSelect={ ( media ) =>
@@ -107,21 +106,22 @@ export default function Edit({
 						) }
 					/>
 				</MediaUploadCheck>	
-			<p>Transcript:
-			<RichText
-				tagName="span"
-				placeholder={ __( 'Transcript', 'signal-hill' ) }
-				allowedFormats={ [] }
-				disableLineBreaks
-				value={ transcript }
-				onChange={ ( newTranscriptContent ) =>
-					updateMeta( {
-						...meta,
-						transcript: newTranscriptContent,
-					} )
-				}
-			/>
-			</p>
+				<p>Transcript:
+					<RichText
+						tagName="span"
+						placeholder={ __( 'Transcript', 'signal-hill' ) }
+						allowedFormats={ [] }
+						disableLineBreaks
+						value={ transcript }
+						onChange={ ( newTranscriptContent ) =>
+							updateMeta( {
+								...meta,
+								transcript: newTranscriptContent,
+							} )
+						}
+					/>
+				</p>
+			</div>
 		</div>
 	);
 }
