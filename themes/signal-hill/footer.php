@@ -11,20 +11,27 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'signal-hill' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'signal-hill' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'signal-hill' ), 'signal-hill', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+	<footer class="site-footer">
+		<div class="player">
+			<audio src="#" style="display: none; visibility: hidden;"></audio>
+			<button class="control">Play</button>
+			<div class="information">
+				<div class="track">
+					<span id="title">Story Title</span> — 
+					<span id="contributor">Contributor Name</span>
+				</div>
+				<div class="time">
+					<span id="current-time">0:00</span> / 
+					<span id="duration">0:00</span>
+				</div>
+				<div class="progress">
+					<div class="bar" data-progress="20%"></div>
+				</div>
+			</div>
+			<button id="transcript">Transcript</button>
+			<button id="actions">Actions</button>
+
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

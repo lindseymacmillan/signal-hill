@@ -394,6 +394,17 @@ html {
 # Base
 --------------------------------------------------------------*/
 
+/* Variables
+--------------------------------------------- */
+
+:root {
+	--left-width: 33vw;
+	--right-width: 66vw;
+	--margin-x: 2rem;
+	--margin-y: 2rem;
+	--border: 1px solid rgb(225, 224, 224);
+}
+
 /* Typography
 --------------------------------------------- */
 body,
@@ -641,15 +652,107 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 
+.site-header {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	display: flex;
+	padding: 0 var(--margin-x) 0 var(--margin-x);
+	text-transform: uppercase;
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	padding: 0 var(--margin-x) 0 0;
+	white-space: nowrap;
+}
+
+.site-title {
+	margin: calc(var(--margin-y)*0.75) 0 0 0;
+}
+
+.site-footer {
+	width: var(--right-width);
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
+.player {
+	height: 6vh;
+	background: white;
+	border-top: var(--border);
+	display: flex;
+	align-items: stretch;
+	text-transform: uppercase;
+}
+
+.player button {
+	background: none;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	padding: 0 calc(var(--margin-x)/2) 0 calc(var(--margin-x)/2);
+}
+
+.player .control {
+	width: calc((var(--margin-x) * 2) + 5ch);
+	justify-content: center;
+	margin: 0;
+	overflow: hidden;
+}
+
+.player .information {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.player .information .track, .player .information .time {
+	z-index: 1;
+}
+
+
+.player .information .progress {
+	position: absolute;
+	background: pink;
+	height: 0.5vh;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+.player .information .progress .bar {
+	background: blue;
+	height: 100%;
+	width: 50%;
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	display: block;
-	width: 100%;
+	flex: 1;
+	display: flex;
+	margin: var(--margin-y) 0 0 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.main-navigation > div {
+	position: absolute;
+	inset: 0;
 }
 
 .main-navigation ul {
@@ -657,6 +760,7 @@ textarea {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	font-size: 1.2rem;
 }
 
 .main-navigation ul ul {
@@ -705,12 +809,24 @@ textarea {
 
 @media screen and (min-width: 37.5em) {
 
+	.site-branding {
+		width: var(--left-width);
+	}
+
 	.menu-toggle {
 		display: none;
 	}
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: space-between;
+		margin: 0 0 0 var(--margin-x);
+	}
+
+	.main-navigation > div {
+		flex: 1;
+		position: relative;
+		inset: unset;
 	}
 }
 
