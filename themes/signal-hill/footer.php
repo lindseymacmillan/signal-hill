@@ -11,6 +11,7 @@
 
 ?>
 
+	</turbo-frame>
 	<footer class="site-footer">
 		<div class="player">
 			<audio src="#" style="display: none; visibility: hidden;"></audio>
