@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('covers', covers)
     // Set the image top, left and height based on its attributes
     for (const cover of covers) {
+        if (cover.classList.contains('spacer')) {
+            continue;
+        }
         cover.addEventListener('mouseenter', function(e) {
             const coverTitle = cover.getAttribute('data-title');
             const coverDescription = cover.getAttribute('data-description');
@@ -23,6 +26,47 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         cover.addEventListener('mouseleave', function(e) {
             setTitleDescription();
+        })
+    }
+
+    const tiers = document.querySelectorAll('#coverflow2 .tier');
+    // Set the image top, left and height based on its attributes
+    for (const cover of tiers) {
+        if (cover.classList.contains('spacer')) {
+            continue;
+        }
+        cover.addEventListener('mouseenter', function(e) {
+            const coverTitle = cover.getAttribute('data-title');
+            const coverDescription = cover.getAttribute('data-description');
+            const coverPerks = cover.getAttribute('data-perks');
+            if (coverTitle && coverDescription) {
+                setTitleDescription(coverTitle, coverDescription);
+            } else {
+                setTitleDescription('Support', 'Support Signal Hill and get access to exclusive perks.');
+            }
+            if (coverPerks) {
+                const perksEl = document.querySelector('#perks');
+                const perksUl = document.createElement('ul');
+                const perks = coverPerks.split(',');
+                for (const perk of perks) {
+                    const perkLi = document.createElement('li');
+                    perkLi.innerHTML = perk;
+                    perksUl.appendChild(perkLi);
+                }
+                perksEl.innerHTML = '';
+                perksEl.appendChild(perksUl);
+            } else {
+                const perksEl = document.querySelector('#perks');
+                perksEl.innerHTML = '';
+            }
+        })
+        cover.addEventListener('mouseleave', function(e) {
+            setTitleDescription(
+                'Support',
+                'Support Signal Hill and get access to exclusive perks.'
+            );
+            const perksEl = document.querySelector('#perks');
+            perksEl.innerHTML = '';
         })
     }
 

@@ -867,6 +867,60 @@ ul.archive li:hover {
     transform: translateY(-1rem);
 }
 
+#coverflow2 .tier {
+    height: 30vh;
+    margin-right: var(--margin-y);
+    border: 1px solid black;
+    aspect-ratio: 4/6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2.6rem;
+}
+
+#coverflow2 .god.tier {
+    background: black;
+    color: white;
+    aspect-ratio: 6/4;
+}
+
+.tier .price {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#perks {
+    font-size: 1.6rem;
+}
+
+.tier .period {
+    font-size: 3rem;
+    margin: 0;
+    opacity: 0.6;
+}
+
+#coverflow2 .tier {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#coverflow2 .tier:hover {
+    transform: translateY(-1rem);
+    background: black;
+    color: white;
+}
+
+#coverflow2 .god.tier:hover {
+    background: linear-gradient(-45deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#coverflow2 .god.tier:hover .period {
+    opacity: 1;
+}
+
 #masthead, #masthead .copy, #masthead .content {
     height: 60vh;
     min-height: 60vh;
