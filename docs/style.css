@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @font-face {
     font-family: 'Sligoil Micro';
@@ -47,7 +48,7 @@
     --art-bg: rgb(255, 198, 198);
     --hover-bg: rgb(255, 198, 198);
     --content-bg: white;
-    --heading-font: 'Avara', sans-serif;
+    --heading-font: "Avara", system-ui;
     --body-font: 'ROM', sans-serif;
     font-size: 16px;
     font-family: "ROM", sans-serif;
@@ -690,9 +691,9 @@ ul.archive li:hover .control {
 #archive2 {
     max-width: 100%;
     overflow: hidden;
-    height: 27vh;
-    min-height: 27vh!important;
-    max-height: 27vh!important;
+    height: 32vh;
+    min-height: 32vh!important;
+    max-height: 32vh!important;
     position: absolute;
     bottom: 0;
 }
@@ -808,8 +809,11 @@ ul.archive li:hover {
     padding: 0;
     margin: 0;
     margin-left: var(--margin-x);
+    margin-right: var(--margin-x);
     margin-bottom: 3rem;
+    margin-top: 7vh;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .listen-links li {
@@ -827,48 +831,55 @@ a.email {
     text-decoration: none;
 }
 
+.info-spacer {
+    height: 10vh;
+}
+
 a.email:hover {
     text-decoration: underline;
 }
 
 .listen-links a {
     background: green;
-    padding: 1rem 2rem;
-    display: inline-block;
-    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
     color: white;
     text-transform: uppercase;
-    border-radius: 100px;
+    border-radius: 100%;
     text-decoration: none;
+    aspect-ratio: 1/1;
+    padding: 2rem;
+    text-align: center;
 }
 
 a.spotify {
     background: #1db954;
+    transform: translate3d(1rem, 4rem, 0) rotate(-10deg);
 }
 
 a.apple {
     background: #872EC4;
+    transform: translate3d(2rem, -2rem, 0) rotate(5deg);
 }
 
 a.pocketcasts {
     background: #f43e37;
+    transform: translate3d(-2rem, 7rem, 0) rotate(10deg);
 }
 
 #coverflow2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
     width: 100dvw;
     overflow-y: hidden;
     position: absolute;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
     z-index: 2;
-}
-
-.tiers {
-    justify-content: flex-end!important;
 }
 
 #coverflow::-webkit-scrollbar {
@@ -928,67 +939,170 @@ a.pocketcasts {
     transform: translateY(-1rem);
 }
 
-#coverflow2 .tier {
-    height: 30vh;
-    margin-right: var(--margin-y);
-    border: 1px solid black;
-    aspect-ratio: 4/6;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 2.6rem;
-}
-
-#coverflow2 .god.tier {
-    background: black;
-    color: white;
-    aspect-ratio: 6/4;
-}
-
-.tier .price {
-    
-    font-size: 6rem;
-    font-weight: bold;
-    margin: 0;
-}
-
 #perks {
     font-size: 1.6rem;
 }
 
-.tier .period {
-    font-size: 3rem;
-    margin: 0;
-    opacity: 0.6;
+#info {
+    margin-top: 22vh;
 }
 
-#coverflow2 .tier {
-    cursor: pointer;
+#support {
+    margin-top: 35vh;
+}
+
+#support, #support .copy, #support .content {
+    height: 45vh;
+    min-height: 45vh;
+    justify-content: flex-start;
+}
+
+#support .content {
+    padding-top: var(--margin-x);
+}
+
+#support .content p {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    font-family: var(--body-font);
+}
+
+.tiers {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: var(--margin-x);
+    margin-bottom: var(--margin-y);
+}
+
+.tier {
+    padding-right: var(--margin-x);
+}
+
+.tier-frame {
+    height: 40vh;
+    background: white;
+    border: 1px solid black;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: black;
     transition: transform 0.2s;
+    cursor: pointer;
 }
 
-#coverflow2 .tier:hover {
+.tier-frame:hover {
+    background: black;
+    color: white;
     transform: translateY(-1rem);
+}
+
+.tier-frame .price, .tier-frame .period {
+    padding: 0 var(--margin-x);
+    font-family: var(--body-font);
+}
+
+.tier-frame .price {
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+.tier-frame .period {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.special.tier {
+    padding-right: 0;
+}
+
+.special.tier .tier-frame {
+    aspect-ratio: 4/3;
     background: black;
     color: white;
 }
 
-#coverflow2 .god.tier:hover {
-    background: linear-gradient(-45deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
-    border: 1px solid rgba(0, 0, 0, 0);
+.special.tier .tier-frame:hover {
+    background: linear-gradient(in hsl longer hue 45deg, red 0 0);
+    color: black;
+    border: 1px solid white;
 }
 
-#coverflow2 .god.tier:hover .period {
+.special.tier .tier-frame:hover .period {
     opacity: 1;
+}
+
+#tiers, #tiers .copy, #tiers .content {
+    height: 34vh;
+    min-height: 34vh;
+    justify-content: flex-start;
+}
+
+#tiers .content {
+    padding-top: var(--margin-x);
+}
+
+#tiers .copy p {
+    margin-bottom: 0;
+}
+#tiers .tier-description {
+    font-family: var(--body-font);
+    font-size: 1.4rem;
+    opacity: 0.8;
+    padding: 0 var(--margin-x);
+}
+
+#tiers ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 3.5rem;
+    font-size: 1.2rem;
+}
+
+#tiers ul li {
+    margin-top: 0.4rem;
+}
+
+#tiers .content p {
+    margin-top: 0;
+    font-family: var(--body-font);
+}
+
+#info, #info .copy, #info .content {
+    height: 80vh;
+    min-height: 80vh;
+    justify-content: flex-start;
+}
+
+#info .contact {
+    margin-top: var(--margin-y);
+}
+
+#info .content {
+    margin-top: 0;
+    padding-top: 5rem;
+}
+
+#info .content p {
+    margin-top: 0;
+}
+
+#info p {
+    font-family: var(--body-font);
+}
+
+#info .copy p {
+    font-family: var(--heading-font);
 }
 
 #masthead, #masthead .copy, #masthead .content {
     height: 60vh;
     min-height: 60vh;
     justify-content: flex-start;
-    position: absolute;
-    top: 18vh;
+    
 }
 
 #masthead .columns {

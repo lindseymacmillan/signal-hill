@@ -29,45 +29,60 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
-    const tiers = document.querySelectorAll('#coverflow2 .tier');
+    const tiersObj = {
+        1: {
+            title: 'Member',
+            price: '$6/month',
+            description: '(less than you spend on a latte)'
+        },
+        2: {
+            title: 'Friend',
+            price: '$12/month',
+            description: '(less than a nice cocktail)'
+        },
+        3: {
+            title: 'Sustainer',
+            price: '$24/month',
+            description: '(less than a tank of gas or a hardback book)'
+        },
+        4: {
+            title: 'One-time donation',
+            price: '$xx,xxx',
+            description: ''
+        }
+    }
+
+    const tiers = document.querySelectorAll('.tiers .tier');
     // Set the image top, left and height based on its attributes
     for (const cover of tiers) {
-        if (cover.classList.contains('spacer')) {
-            continue;
-        }
         cover.addEventListener('mouseenter', function(e) {
-            const coverTitle = cover.getAttribute('data-title');
-            const coverDescription = cover.getAttribute('data-description');
-            const coverPerks = cover.getAttribute('data-perks');
-            if (coverTitle && coverDescription) {
-                setTitleDescription(coverTitle, coverDescription);
-            } else {
-                setTitleDescription('Support', 'Support Signal Hill and get access to exclusive perks.');
-            }
-            if (coverPerks) {
-                const perksEl = document.querySelector('#perks');
-                const perksUl = document.createElement('ul');
-                const perks = coverPerks.split(',');
-                for (const perk of perks) {
-                    const perkLi = document.createElement('li');
-                    perkLi.innerHTML = perk;
-                    perksUl.appendChild(perkLi);
-                }
-                perksEl.innerHTML = '';
-                perksEl.appendChild(perksUl);
-            } else {
-                const perksEl = document.querySelector('#perks');
-                perksEl.innerHTML = '';
-            }
+            const tier = cover.getAttribute('tier-level');
+            setTier(tier);
         })
         cover.addEventListener('mouseleave', function(e) {
-            setTitleDescription(
-                'Support',
-                'Support Signal Hill and get access to exclusive perks.'
-            );
-            const perksEl = document.querySelector('#perks');
-            perksEl.innerHTML = '';
+            setTier(3);
         })
+    }
+
+    const setTier = (tier) => {
+        const titleEl = document.querySelector('#tier-title');
+        const priceEl = document.querySelector('#tier-price');
+        const descriptionEl = document.querySelector('#tier-description');
+        const tierObj = tiersObj[tier];
+        titleEl.innerHTML = tierObj.title;
+        priceEl.innerHTML = tierObj.price;
+        descriptionEl.innerHTML = tierObj.description;
+        const perks = document.querySelectorAll('#tiers li');
+        for (const perk of perks) {
+            const tierLevel = perk.getAttribute('tier-level');
+            if (tier >= tierLevel) {
+                perk.style.opacity = 1;
+                perk.style.textDecoration = 'none';
+            } else {
+                perk.style.opacity = 0.2;
+                perk.style.textDecoration = 'line-through';
+            }
+        }
     }
 
     const setTitleDescription = function(title, description) {
